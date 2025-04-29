@@ -1,8 +1,7 @@
-package com.example.employee_demo.Controller;
+package com.example.employee_demo.controller;
 
-import com.example.employee_demo.Entity.Employee;
+import com.example.employee_demo.entity.Employee;
 import com.example.employee_demo.Service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,11 @@ import java.util.List;
 @RequestMapping("/api")
 public class EmployeeController {
 
-    @Autowired
+
     private EmployeeService employeeService;
+    public EmployeeController(EmployeeService employeeService){
+        this.employeeService=employeeService;
+    }
 // testing post-commit hook
 // testing post-commit hook
 // testing post-commit hook
