@@ -52,5 +52,16 @@ public class EmployeeController {
         return new ResponseEntity<>("Employee deleted", HttpStatus.OK);
     }
 
+    @RestController
+    public class WebhookController {
+
+        @PostMapping("/github-webhook")
+        public ResponseEntity<String> receiveWebhook(@RequestBody String payload) {
+            System.out.println("Received webhook payload: " + payload);
+            return ResponseEntity.ok("Webhook received");
+        }
+    }
+
+
 }
 
